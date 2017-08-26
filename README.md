@@ -14,9 +14,9 @@ const Heading = withSlots(props => (
 const MyApp = props => (
   <main>
     <Heading>
-      <Fill name="title">
+      <fill name="title">
         <h1>Title</h1>
-      </Fill>
+      </fill>
     </Heading>
   </main>
 );
@@ -40,4 +40,8 @@ const MyApp = props => (
 
 This gives you the developer experience of composing components while also allowing you to pass in more than just `children` to
 your components.
+
+Todo:
+[] - Handle Fills
+[] - Strip `withSlots` function calls with just the component
 
