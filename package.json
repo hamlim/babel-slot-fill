@@ -1,0 +1,11 @@
+{
+  "name": "babel-slot-fill",
+  "version": "1.0.0",
+  "description": "A simple slot and fill react component babel plugin",
+  "main": "index.js",
+  "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.23.0"
+  }
+}
