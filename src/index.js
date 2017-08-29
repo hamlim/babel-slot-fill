@@ -78,9 +78,7 @@ export default function(babel) {
                         // {'string'}
                       } else if (t.isStringLiteral(child.expression)) {
                         return t.StringLiteral(child.expression.value)
-                        {
-                          ;['hi', 'heyo']
-                        }
+                        //{['hi', 'heyo']}
                       } else if (t.isArrayExpression(child.expression)) {
                         return t.ArrayExpression(
                           child.expression.elements.map(el => {
