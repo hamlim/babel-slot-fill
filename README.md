@@ -42,6 +42,8 @@ This gives you the developer experience of composing components while also allow
 your components.
 
 Todo:  
-[ ] - Handle Fills  
+Things to do before releasing Alpha/Beta v1  
+[x] - Handle Fills  
+[ ] - Strip fills from children  
 [ ] - Strip `withSlots` function calls with just the component
 
