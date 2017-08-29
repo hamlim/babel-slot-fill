@@ -44,6 +44,6 @@ your components.
 Todo:  
 Things to do before releasing Alpha/Beta v1  
 [x] - Handle Fills  
-[ ] - Strip fills from children  
-[ ] - Strip `withSlots` function calls with just the component
+[x] - Strip fills from children  
+[x] - Strip `withSlots` function calls with just the component
 
