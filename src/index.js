@@ -23,7 +23,6 @@ export default function(babel) {
         }
       },
       CallExpression(path) {
-        // @TODO remove HOC and replace with params[0]
         const { node: { callee, arguments: [comp] } } = path
         if (callee.name !== HOC) return
         // if its an arrow function
@@ -31,9 +30,23 @@ export default function(babel) {
         if (t.isArrowFunctionExpression(comp)) {
           const paramName = comp.params[0].name
           path.traverse(slotVisitor, { paramName })
+          path.replaceWith(
+          	t.ArrowFunctionExpression(
+              comp.params,
+              comp.body
+            )
+          )
         } else if (t.isClassExpression(comp)) {
           // otherwise handle class based components
           path.traverse(slotVisitor, { paramName: 'this.props' })
+          path.replaceWith(
+          	t.ClassExpression(
+              t.Identifier(comp.id.name),
+              comp.superClass,
+              comp.body,
+              []
+            )
+          )
         }
       },
       JSXElement(path) {
@@ -88,6 +101,11 @@ export default function(babel) {
               ),
             ),
           )
+        })
+        path.get('children').forEach(childPath => {
+          if (t.isJSXElement(childPath.node) && childPath.get('openingElement').node.name.name === FILL) {
+            childPath.remove();
+          }
         })
       },
     },
