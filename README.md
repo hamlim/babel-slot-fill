@@ -1,7 +1,5 @@
 # Babel-Slot-Fill 
 
-## ⚠️**This is still in active development**⚠️
-
 Babel Slot Fill is a simple babel plugin that allows you to write React components like this:
 
 ```JSX
@@ -41,9 +39,21 @@ const MyApp = props => (
 This gives you the developer experience of composing components while also allowing you to pass in more than just `children` to
 your components.
 
-Todo:  
-Things to do before releasing Alpha/Beta v1  
-[x] - Handle Fills  
-[x] - Strip fills from children  
-[x] - Strip `withSlots` function calls with just the component
 
+## How to use
+
+First install:
+
+```Javascript
+yarn add babel-slot-fill
+```
+
+then add to your `.babelrc` file:
+
+```JSON
+{
+  "plugins": [
+    "babel-slot-fill"
+  ]
+}
+```
