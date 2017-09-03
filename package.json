@@ -2,10 +2,18 @@
   "name": "babel-slot-fill",
   "version": "1.0.0",
   "description": "A simple slot and fill react component babel plugin",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
   "license": "MIT",
   "dependencies": {
-    "babel": "^6.23.0"
+    "babel": "^6.23.0",
+    "babel-cli": "next",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "scripts": {
+    "build": "babel ./src/index.js --out-file ./dist/index.js"
+  },
+  "babel": {
+    "presets": ["es2015"]
   }
 }
